@@ -1,0 +1,15 @@
+<a href="main.lua" data-role="button" data-icon="arrow-l">Back to printer list</a>
+
+<div data-role="controlgroup">
+<a href="exec_gcode.lua?id={id}&gcode=M42 P3 S0|G4 P500|M42 P3 S255|G4 P500|M42 P3 S0|G4 P500|M42 P3 S255" data-role="button">Blink</a>
+<a href="exec_gcode.lua?id={id}&gcode=G28|G92 X0 Y0 Z0|G1 F600 Z20" data-role="button">Home printer</a>
+<a href="exec_gcode.lua?id={id}&gcode=M104 S210" data-role="button">Heatup 210C</a>
+<a href="exec_gcode.lua?id={id}&gcode=M104 S0" data-role="button">Cooldown</a>
+<a href="exec_gcode.lua?id={id}&gcode=M25" data-role="button">Stop SD print</a>
+</div>
+
+<h3>Send custom GCode</h3>
+<form action="exec_gcode.lua?id={id}" method="get">
+<label for="gcode" class="ui-hidden-accessible">GCode:</label><input type="text" name="gcode" value="" placeholder="GCode"/>
+<label for="gcode" class="ui-hidden-accessible">Submit:</label><input type="submit" value="Send" />
+</form>
